@@ -9,8 +9,8 @@ const App = () => (
         <div>
             <TextFieldDefault text="Login"/><br />
             <TextFieldDefault text="Password"/><br />
-            <ButtonDefault text="Submit"/>
-            <ButtonDefault text="Reset" reset="1" />
+            <ButtonDefault text="Submit" action="submit"/>
+            <ButtonDefault text="Reset" action="reset" />
         </div>
     </MuiThemeProvider>
 );
