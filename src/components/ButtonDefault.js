@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
-const ButtonDefault = () => (
-        <RaisedButton label={this.props.text} />
-);
+export default class ButtonDefault extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            reset: this.props.reset
+        };
+        this.reset = this.reset.bind(this);
+    }
 
-export default ButtonDefault;
+    reset(){
+        if(this.state.reset) {
+            document.querySelectorAll("input").forEach(element => {
+                element.value = ""
+            });
+        }
+        return false;
+    }
+
+    render(){
+        return(
+            <RaisedButton  label={this.props.text} onClick={this.reset} />
+        )
+    }
+
+}
+
+
+
