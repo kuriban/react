@@ -10,8 +10,8 @@ const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
 const paths = {
   static: {
-    images: `${root}/images/**/*`,
-    styles: `${root}/styles/**/*`,
+      images: `${root}/images/**/*`,
+      styles: `${root}/styles/**/*`,
       fonts: `${root}/fonts/**/*`
   }
 };
