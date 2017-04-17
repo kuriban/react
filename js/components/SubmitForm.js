@@ -22,8 +22,7 @@ const styles = {
     },
 };
 
-
-export default class SubmitForm extends PureComponent {
+export class SubmitForm extends PureComponent {
     constructor(props){
         super(props);
         this.state = {
@@ -35,7 +34,11 @@ export default class SubmitForm extends PureComponent {
         this.reset = this.reset.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkData = this.checkData.bind(this);
+        this.getState = this.getState.bind(this);
 
+    }
+    getState(){
+        return this.state.errorLogin
     }
     reset(){
         this.setState({
@@ -55,7 +58,8 @@ export default class SubmitForm extends PureComponent {
             });
         }else{
             this.setState({
-                message:'Такого пользователя не существует'
+                message:'Такого пользователя не существует',
+                errorLogin: 1
             });
         }
         // fetch("/data.json",{
@@ -126,7 +130,7 @@ export default class SubmitForm extends PureComponent {
                         <div>{this.state.message}</div>
                         {setTimeout(() => {
                             if(!this.state.errorLogin){
-                                browserHistory.push(`/register`);
+                                browserHistory.push(`/cabinet`);
                             }
                         },2000)
                         }

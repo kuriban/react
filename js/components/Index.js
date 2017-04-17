@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SubmitForm from './SubmitForm';
+import { SubmitForm } from './SubmitForm';
 import RegisterForm from './RegisterForm';
 
 

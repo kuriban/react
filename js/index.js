@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import $ from "jquery";
-import jQuery from 'jquery';
-
-window.$ = $;
-window.jQuery = jQuery;
-
 //import './js/data.json';
 
 //import '../styles/style.css';
