@@ -76,16 +76,15 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: /[\/\\](node_modules|bower_components|public\/)[\/\\]/,
-                loaders: [
-                    'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]&sourceMap',
-                    'postcss',
-                    'sass'
-                ]
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'resolve-url-loader', 'sass-loader'],
+                exclude: [/node_modules/],
             },
             {
-                test: /\.css$/, loader: "style-loader!css-loader"
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'resolve-url-loader'],
+                }),
             },
             {
                 test: /\.jpg/,

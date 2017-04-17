@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -49,7 +50,9 @@ export default class SubmitForm extends PureComponent {
                     <br />
 
 
-                    <RaisedButton  label="Register"   onClick={this.submit}/>
+                    <Link to="/register">
+                        <RaisedButton  label="Register"  />
+                    </Link>
                     <RaisedButton  label="Reset"      onClick={this.reset} />
                 </div>
             </MuiThemeProvider>

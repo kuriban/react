@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Router, Route, IndexRoute, browserHistory } from 'react-router';
+import $ from "jquery";
+import jQuery from 'jquery';
 
-import SubmitForm from './components/SubmitForm';
-import RegisterForm from './components/RegisterForm';
+window.$ = $;
+window.jQuery = jQuery;
 
-const router = (
-    <Router history={browserHistory}>
-        <Route path="/" component={SubmitForm} />
-        <Route path="/register" component={RegisterForm} />
+//import './js/data.json';
 
-    </Router>
-);
+//import '../styles/style.css';
+
+import router from './components/Route';
 
 ReactDOM.render(
     router,
     document.getElementById('app')
 );
-
-
 
